@@ -1,0 +1,15 @@
+venv/
+.venv/
+deploy/
+build/
+frontend_flutter/build/
+frontend_flutter/.dart_tool/
+frontend_flutter/web/canvaskit/
+*.min.js
+*.dart.js
+*.js.map
+*.wasm
+data/
+graphify-out/
+.git/
+__pycache__/

@@ -1,0 +1,69 @@
+# Environments and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+
+# Databases & Runtime Data
+data/*.db
+data/*.db-journal
+data/*.sqlite
+data/*.sqlite3
+data/sessions_store/
+.agy_uploads/
+
+# Application Logs
+*.log
+bot.log
+agy_test.log
+
+# Flutter & Dart Web Frontend
+frontend_flutter/.dart_tool/
+frontend_flutter/.flutter-plugins
+frontend_flutter/.flutter-plugins-dependencies
+frontend_flutter/.packages
+frontend_flutter/build/
+frontend_flutter/.pub-cache/
+frontend_flutter/.pub/
+
+# Operating System & IDEs
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Knowledge Graph / Scratch Outputs
+graphify-out/

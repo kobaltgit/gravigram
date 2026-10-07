@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grav-yellow" gradientUnits="userSpaceOnUse" x1="1081.1696" y1="393.9643" x2="1593.1238" y2="393.9643" gradientTransform="matrix(-0.7071 -0.7071 0.7071 -0.7071 922.9307 1480.0803)">
+      <stop offset="0.3812" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.9991" stop-color="#FFEE48"/>
+    </linearGradient>
+    <linearGradient id="grav-green" gradientUnits="userSpaceOnUse" x1="1081.2803" y1="394.2459" x2="1593.2345" y2="394.2459" gradientTransform="matrix(-0.9993 0.03617 -0.03617 -0.9993 1606.6431 601.6158)">
+      <stop offset="0.3812" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.9991" stop-color="#00BA5C"/>
+    </linearGradient>
+    <linearGradient id="grav-amber" gradientUnits="userSpaceOnUse" x1="719.4125" y1="-889.7263" x2="1231.3666" y2="-889.7263" gradientTransform="matrix(0 -1 1 0 1145.7263 1231.3895)">
+      <stop offset="0.3812" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.9991" stop-color="#FBBC04"/>
+    </linearGradient>
+    <linearGradient id="grav-red" gradientUnits="userSpaceOnUse" x1="719.4125" y1="-889.7263" x2="1231.3666" y2="-889.7263" gradientTransform="matrix(0.8216 -0.57 0.57 0.8216 -38.2307 1543.0221)">
+      <stop offset="0.3812" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.9991" stop-color="#FB413D"/>
+    </linearGradient>
+    <linearGradient id="grav-blue" gradientUnits="userSpaceOnUse" x1="1080.9017" y1="394.611" x2="1592.856" y2="394.611" gradientTransform="matrix(0 1 -1 0 650.611 -1080.8788)">
+      <stop offset="0.2547" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.8231" stop-color="#3186FF"/>
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="256" fill="#3186FF"/>
+  <circle cx="256" cy="256" r="256" fill="url(#grav-yellow)"/>
+  <circle cx="256" cy="256" r="256" fill="url(#grav-green)"/>
+  <circle cx="256" cy="256" r="256" fill="url(#grav-amber)"/>
+  <circle cx="256" cy="256" r="256" fill="url(#grav-red)"/>
+  <circle cx="256" cy="256" r="256" fill="url(#grav-blue)"/>
+  <path fill="#FFFFFF" d="M277.6,425c1.5,21.6,25,35.5,27.5,2c5.6-99.2,159.4-212.4,101.4-279.4s-192,69-291,60.3c-36.6-2.6-23.1,22.9-2,27.5c78.2,21,135.9-34.7,176.9,12.7C331.4,295.5,268,344.6,277.6,425z"/>
+</svg>

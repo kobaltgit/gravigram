@@ -1,0 +1,19 @@
+services:
+  antigravity-miniapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: antigravity-miniapp
+    restart: unless-stopped
+    ports:
+      - "8085:80"
+    environment:
+      - VIRTUAL_HOST=agy.bargcraft.top
+      - LETSENCRYPT_HOST=agy.bargcraft.top
+    networks:
+      - default
+
+networks:
+  default:
+    name: homelab_network
+    external: true

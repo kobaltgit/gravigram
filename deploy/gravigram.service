@@ -1,0 +1,15 @@
+[Unit]
+Description=Gravigram Universal Agent Control Plane (Telegram Bot & Mini App)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/gravigram
+ExecStart=/opt/gravigram/venv/bin/python run.py
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
