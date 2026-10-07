@@ -12,6 +12,11 @@
 ## 📜 Хронология
 
 ### 2026-10-07
+* **Исправление распаковки и маршрутизации Flutter Web Mini App (BUG-033)**:
+  * В [`setup.py`](file:///d:/Projects/active/antigravity_bot/setup.py) добавлена проверка внутренней структуры `miniapp_web.tar.gz` и автоматический перенос файлов из `frontend_flutter/build/` в `build/web/`.
+  * В [`install.sh`](file:///d:/Projects/active/antigravity_bot/install.sh) и [`install.ps1`](file:///d:/Projects/active/antigravity_bot/install.ps1) исправлены пути распаковки архива и закрыта скобка условия.
+  * В [`src/server/app.py`](file:///d:/Projects/active/antigravity_bot/src/server/app.py) внедрён автоматический fallback `WEB_DIR`: если `index.html` отсутствует в `build/web/`, но найден в `build/`, сервер обслуживает его без сбоев.
+
 * **Смена лицензии проекта с MIT на GNU AGPLv3**:
   * Создан [`LICENSE`](file:///d:/Projects/active/antigravity_bot/LICENSE) — официальный текст GNU Affero General Public License v3.0 (скачан с gnu.org).
   * Обновлён бейдж лицензии и секция `## 📄 License` в [`README.md`](file:///d:/Projects/active/antigravity_bot/README.md).

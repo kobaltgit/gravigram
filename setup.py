@@ -459,12 +459,35 @@ DB_PATH={str(root_dir / "data" / "bot.db")}
 
     if web_index.exists():
         print(c(f"  ✔ Сборка Flutter Web уже готова ({web_dir}).", Colors.GREEN))
+    elif (web_dir.parent / "index.html").exists():
+        # Already extracted into build/ root; relocate into build/web/
+        web_dir.mkdir(parents=True, exist_ok=True)
+        for item in list(web_dir.parent.iterdir()):
+            if item.name != "web":
+                try:
+                    shutil.move(str(item), str(web_dir / item.name))
+                except Exception:
+                    pass
+        print(c(f"  ✔ Сборка Flutter Web перемещена в {web_dir}.", Colors.GREEN))
     elif tar_archive.exists():
         print(f"[*] Распаковка готового архива Mini App ({tar_archive.name})...")
         try:
-            web_dir.parent.mkdir(parents=True, exist_ok=True)
+            web_dir.mkdir(parents=True, exist_ok=True)
             with tarfile.open(tar_archive, "r:gz") as tar:
-                tar.extractall(path=web_dir.parent)
+                members = tar.getmembers()
+                has_web_root = any(m.name.startswith("web/") or m.name.startswith("./web/") for m in members)
+                extract_target = web_dir.parent if has_web_root else web_dir
+                tar.extractall(path=extract_target)
+
+            # If files were extracted into build/ instead of build/web/, move them
+            if not web_index.exists() and (web_dir.parent / "index.html").exists():
+                for item in list(web_dir.parent.iterdir()):
+                    if item.name != "web":
+                        try:
+                            shutil.move(str(item), str(web_dir / item.name))
+                        except Exception:
+                            pass
+
             if web_index.exists():
                 print(c("  ✔ Готовый веб-бандл Mini App успешно распакован!", Colors.GREEN))
             else:

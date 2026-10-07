@@ -348,6 +348,10 @@ async def api_update_settings(req: SettingUpdateRequest):
 # --- Static Flutter Web Mounting (SPA Fallback) ---
 
 WEB_DIR = Path(__file__).resolve().parent.parent.parent / "frontend_flutter" / "build" / "web"
+if not (WEB_DIR / "index.html").exists():
+    alt_dir = Path(__file__).resolve().parent.parent.parent / "frontend_flutter" / "build"
+    if (alt_dir / "index.html").exists():
+        WEB_DIR = alt_dir
 
 class SPAStaticFiles(StaticFiles):
     """StaticFiles handler that falls back to index.html for SPA client-side routes."""

@@ -129,11 +129,20 @@ echo -e "${GREEN}✔ Библиотеки Python успешно установл
 WEB_DIR="$SCRIPT_DIR/frontend_flutter/build/web"
 TAR_FILE="$SCRIPT_DIR/miniapp_web.tar.gz"
 
-if [ ! -f "$WEB_DIR/index.html" ] && [ -f "$TAR_FILE" ]; then
-    echo -e "${YELLOW}[*] Распаковка готового веб-бандла Telegram Mini App...${RESET}"
-    mkdir -p "$SCRIPT_DIR/frontend_flutter/build"
-    tar -xzf "$TAR_FILE" -C "$SCRIPT_DIR/frontend_flutter/build"
-    echo -e "${GREEN}✔ Веб-приложение Mini App готово к работе.${RESET}"
+if [ ! -f "$WEB_DIR/index.html" ]; then
+    if [ -f "$SCRIPT_DIR/frontend_flutter/build/index.html" ]; then
+        mkdir -p "$WEB_DIR"
+        find "$SCRIPT_DIR/frontend_flutter/build" -maxdepth 1 -not -name "build" -not -name "web" -exec mv {} "$WEB_DIR/" \; 2>/dev/null || true
+    elif [ -f "$TAR_FILE" ]; then
+        echo -e "${YELLOW}[*] Распаковка готового веб-бандла Telegram Mini App...${RESET}"
+        mkdir -p "$WEB_DIR"
+        if tar -tzf "$TAR_FILE" 2>/dev/null | grep -q "^web/"; then
+            tar -xzf "$TAR_FILE" -C "$SCRIPT_DIR/frontend_flutter/build"
+        else
+            tar -xzf "$TAR_FILE" -C "$WEB_DIR"
+        fi
+        echo -e "${GREEN}✔ Веб-приложение Mini App готово к работе.${RESET}"
+    fi
 fi
 
 # 5. Проверка и автоматическая установка Antigravity CLI (agy)

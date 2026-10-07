@@ -148,10 +148,11 @@ $TarArchive = Join-Path $ScriptDir "miniapp_web.tar.gz"
 
 if ((-not (Test-Path $WebIndex)) -and (Test-Path $TarArchive)) {
     Write-Host "[*] Распаковка готового веб-бандла Telegram Mini App..." -ForegroundColor Yellow
-    & $VenvPython -c "import tarfile, os; os.makedirs('frontend_flutter/build', exist_ok=True); tarfile.open('miniapp_web.tar.gz').extractall('frontend_flutter/build')"
+    & $VenvPython -c "import tarfile, os, shutil; os.makedirs('frontend_flutter/build/web', exist_ok=True); tar = tarfile.open('miniapp_web.tar.gz'); has_web = any(m.name.startswith('web/') for m in tar.getmembers()); target = 'frontend_flutter/build' if has_web else 'frontend_flutter/build/web'; tar.extractall(target); tar.close()"
     if (Test-Path $WebIndex) {
         Write-Host "✔ Веб-приложение Mini App готово к работе." -ForegroundColor Green
     }
+}
 # 6. Проверка и автоматическая установка Antigravity CLI (agy)
 $agyCmd = Get-Command "agy" -ErrorAction SilentlyContinue
 $localAgy = Join-Path $env:LOCALAPPDATA "agy\bin\agy.EXE"

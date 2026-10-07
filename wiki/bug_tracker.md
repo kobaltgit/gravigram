@@ -7,8 +7,8 @@
 ## 📊 Сводка статусов
 * 🔴 **Open (Открыт)**: 0
 * 🟡 **In Progress (В работе)**: 0
-* 🟢 **Resolved (Решён)**: 32
-* ⚪ **Closed / Verified (Закрыт и проверен)**: 32
+* 🟢 **Resolved (Решён)**: 33
+* ⚪ **Closed / Verified (Закрыт и проверен)**: 33
 
 ---
 
@@ -48,3 +48,5 @@
 | **BUG-030** | *2026-10-07* | `src/agent/accounts.py` | **Medium** | Несоответствие аккаунта между терминалом (`kobaltmail@gmail.com`) и ботом (`osbornubentleyb@gmail.com`): в Windows CLI приоритетно читает Windows Credential Manager (`gemini:antigravity`), а бот читал устаревший файл `oauth_creds.json`. | 🟢 Resolved | Добавлена двусторонняя синхронизация с Windows Credential Manager через `Advapi32.dll` (`CredReadW` / `CredWriteW`). Аккаунт из терминала автоматически импортирован, при переключении обновляются и файл, и хранилище Windows. |
 | **BUG-031** | *2026-10-07* | `frontend_flutter/web/index.html` | **High** | Telegram WebView удерживал в кэше устаревший SPA-бандл через `flutter_service_worker.js`, блокируя появление нового интерфейса (в т.ч. переключателя языка). | 🟢 Resolved | В `index.html` внедрён принудительный сброс всех Service Workers и удаление `caches`. В `flutter_bootstrap.js` отключена регистрация SW, а `flutter_service_worker.js` заменён скриптом самоликвидации. Свежий релиз собран и задеплоен на CT 107. |
 | **BUG-032** | *2026-10-07* | `frontend_flutter/lib/services/` | **Medium** | Ошибка сборки тестов `Error: Dart library 'dart:js' is not available on this platform` при запуске `flutter test` на нативной VM из-за безусловного импорта `dart:js` в `api_service.dart`. | 🟢 Resolved | Создана модульная архитектура условных импортов (`web_helper_stub.dart`, `web_helper_web.dart`, `web_helper.dart`). На VM возвращается безопасный stub, в браузере — полноценный доступ к JS контексту Telegram WebApp. `flutter test` проходит успешно (11/11). |
+| **BUG-033** | *2026-10-07* | `setup.py`, `install.sh`, `install.ps1`, `src/server/app.py` | **Medium** | Архив `miniapp_web.tar.gz` распаковывался в `frontend_flutter/build/` вместо `frontend_flutter/build/web/`, из-за чего выводилось предупреждение «index.html не найден» и Mini App не открывался. | 🟢 Resolved | Скрипты установки адаптированы под проверку внутренней структуры архива и автоматическое перемещение файлов в `build/web/`. В `src/server/app.py` добавлен автоматический fallback директории `WEB_DIR` на `frontend_flutter/build`. |
+
