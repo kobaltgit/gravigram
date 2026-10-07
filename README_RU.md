@@ -11,7 +11,7 @@
 [![aiogram 3](https://img.shields.io/badge/telegram-aiogram_3-2CA5E0.svg)](https://docs.aiogram.dev/)
 [![Flutter 3.44+](https://img.shields.io/badge/flutter-3.44+-02569B.svg)](https://flutter.dev/)
 [![FastAPI](https://img.shields.io/badge/backend-FastAPI-009688.svg)](https://fastapi.tiangolo.com/)
-[![Tests: 70 passed](https://img.shields.io/badge/tests-70%20passed-brightgreen.svg)](#-автоматизированное-тестирование)
+[![Tests: 75 passed](https://img.shields.io/badge/tests-75%20passed-brightgreen.svg)](#-автоматизированное-тестирование)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
 
 🌐 [English](README.md) | [Русский](README_RU.md)
@@ -295,9 +295,9 @@ gravigram/
 
 ## 🧪 Автоматизированное тестирование
 
-Gravigram снабжён полноценным набором автоматизированных тестов для асинхронного Python-бэкенда и фронтенда Flutter Mini App с **100% успешным прохождением (70 из 70 тестов)**:
+Gravigram снабжён полноценным набором автоматизированных тестов для асинхронного Python-бэкенда и фронтенда Flutter Mini App с **100% успешным прохождением (75 из 75 тестов)**:
 
-* **Python Backend** (`pytest`): 59 тестов, проверяющих CRUD SQLite, криптографическую валидацию Telegram TMA HMAC-SHA256, REST эндпоинты, планировщик `HH:MM` и cron, стриминг и хуки агента, паритет словарей переводов i18n RU/EN и менеджер аккаунтов Google OAuth.
+* **Python Backend** (`pytest`): 64 теста, проверяющих CRUD SQLite, криптографическую валидацию Telegram TMA HMAC-SHA256, REST эндпоинты, планировщик `HH:MM` и cron, стриминг и хуки агента, паритет словарей переводов i18n RU/EN, валидацию и локализацию мастера установки, и менеджер аккаунтов Google OAuth.
 * **Flutter Mini App** (`flutter test`): 11 тестов, проверяющих модели данных, реактивный `LanguageController`, строковую локализацию и виджет-тесты всех экранов (`HomeScreen`, `SettingsScreen`, `ProjectsScreen`, `TasksScreen`).
 
 Запуск всех тестов в одну команду:

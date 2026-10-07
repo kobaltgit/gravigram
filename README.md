@@ -11,7 +11,7 @@
 [![aiogram 3](https://img.shields.io/badge/telegram-aiogram_3-2CA5E0.svg)](https://docs.aiogram.dev/)
 [![Flutter 3.44+](https://img.shields.io/badge/flutter-3.44+-02569B.svg)](https://flutter.dev/)
 [![FastAPI](https://img.shields.io/badge/backend-FastAPI-009688.svg)](https://fastapi.tiangolo.com/)
-[![Tests: 70 passed](https://img.shields.io/badge/tests-70%20passed-brightgreen.svg)](#-automated-testing)
+[![Tests: 75 passed](https://img.shields.io/badge/tests-75%20passed-brightgreen.svg)](#-automated-testing)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
 
 🌐 [English](README.md) | [Русский](README_RU.md)
@@ -294,9 +294,9 @@ gravigram/
 
 ## 🧪 Automated Testing
 
-Gravigram features a comprehensive automated test suite covering both the asynchronous Python backend and the Flutter Mini App frontend with **100% pass rate (70 of 70 tests)**:
+Gravigram features a comprehensive automated test suite covering both the asynchronous Python backend and the Flutter Mini App frontend with **100% pass rate (75 of 75 tests)**:
 
-* **Python Backend** (`pytest`): 59 tests covering SQLite CRUD, Telegram TMA HMAC-SHA256 crypto validation, REST endpoints, `HH:MM` & cron scheduler, agent streaming & hooks, i18n dictionaries parity, and Google OAuth account manager.
+* **Python Backend** (`pytest`): 64 tests covering SQLite CRUD, Telegram TMA HMAC-SHA256 crypto validation, REST endpoints, `HH:MM` & cron scheduler, agent streaming & hooks, i18n dictionaries parity, setup wizard validation, and Google OAuth account manager.
 * **Flutter Mini App** (`flutter test`): 11 tests covering data models, reactive `LanguageController`, string translations, and widget tests for all app screens (`HomeScreen`, `SettingsScreen`, `ProjectsScreen`, `TasksScreen`).
 
 Run the entire test suite with a single command:

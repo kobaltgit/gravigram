@@ -12,6 +12,14 @@
 ## 📜 Хронология
 
 ### 2026-10-07
+* **Двуязычный мастер установки (EN / RU, английский по умолчанию с переключателем)**:
+  * В [`setup.py`](file:///d:/Projects/active/antigravity_bot/setup.py) внедрена полноценная интернационализация: поддержка аргумента `--lang {en,ru}` и интерактивный селектор при запуске с английским языком по умолчанию (`[1] English (default)`, `[2] Русский`). Все баннеры, шаги, валидаторы, ошибки и подсказки переведены на два языка. Выбранный язык автоматически прописывается в `.env` (`DEFAULT_LANGUAGE`) и в базу данных `data/bot.db` (`settings.language`).
+  * В [`install.sh`](file:///d:/Projects/active/antigravity_bot/install.sh) добавлен стартовый селектор языка, поддержка аргумента `--lang`, двуязычные системные логи и передача выбранного языка в `setup.py`.
+  * В [`install.ps1`](file:///d:/Projects/active/antigravity_bot/install.ps1) добавлен параметр `-Language`, интерактивный выбор языка для Windows PowerShell и передача в `setup.py`.
+  * Разработан модульный набор тестов [`tests/test_setup_wizard.py`](file:///d:/Projects/active/antigravity_bot/tests/test_setup_wizard.py) (5 тестов: валидаторы, выбор языка, интерактивный режим, функция `t`). Общее число тестов проекта выросло до 75 (64 backend + 11 frontend, 100% pass rate).
+  * Обновлены бейджи и описания тестов в [`README.md`](file:///d:/Projects/active/antigravity_bot/README.md) и [`README_RU.md`](file:///d:/Projects/active/antigravity_bot/README_RU.md).
+
+
 * **Исправление распаковки и маршрутизации Flutter Web Mini App (BUG-033)**:
   * В [`setup.py`](file:///d:/Projects/active/antigravity_bot/setup.py) добавлена проверка внутренней структуры `miniapp_web.tar.gz` и автоматический перенос файлов из `frontend_flutter/build/` в `build/web/`.
   * В [`install.sh`](file:///d:/Projects/active/antigravity_bot/install.sh) и [`install.ps1`](file:///d:/Projects/active/antigravity_bot/install.ps1) исправлены пути распаковки архива и закрыта скобка условия.

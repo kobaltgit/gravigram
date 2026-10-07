@@ -72,7 +72,7 @@
 - [x] Кроссплатформенный поиск бинарника `agy` (Linux, Windows, PATH, `AGY_BIN_PATH` в `.env`)
 - [x] SPA Fallback в FastAPI ([`src/server/app.py`](file:///d:/Projects/active/antigravity_bot/src/server/app.py)) для автономного хостинга Flutter Web
 - [x] Кроссплатформенные скрипты сборки веба `scripts/build_web.sh` и `scripts/build_web.ps1`
-- [x] Интерактивный CLI-мастер установки (`setup.py` / `install.sh`) с пошаговым диалогом и автогенерацией `.env`
+- [x] Интерактивный CLI-мастер установки (`setup.py` / `install.sh` / `install.ps1`) с поддержкой двух языков (EN по умолчанию / RU с переключателем) и автогенерацией `.env`
 - [x] Автоматическая настройка домена, Nginx reverse proxy и выпуск SSL Let's Encrypt (Certbot) в мастере установки ([`setup.py`](file:///d:/Projects/active/antigravity_bot/setup.py))
 
 ---
@@ -110,7 +110,7 @@
 
 ---
 
-## 🧪 10. Комплексное Автоматизированное Тестирование (70 тестов, 100% Pass)
+## 🧪 10. Комплексное Автоматизированное Тестирование (75 тестов, 100% Pass)
 - [x] Настройка тестового раннера `pytest`, `pytest-asyncio`, `pytest-cov` и конфигурации [`pytest.ini`](file:///d:/Projects/active/antigravity_bot/pytest.ini)
 - [x] Изолированное тестовое окружение БД (`isolated_db` fixture в [`tests/conftest.py`](file:///d:/Projects/active/antigravity_bot/tests/conftest.py))
 - [x] Модульные тесты конфигурации и настроек ([`tests/test_config.py`](file:///d:/Projects/active/antigravity_bot/tests/test_config.py))
@@ -124,10 +124,12 @@
 - [x] Тестирование стриминга мыслей и инструментов ([`tests/test_agent_executor.py`](file:///d:/Projects/active/antigravity_bot/tests/test_agent_executor.py))
 - [x] Тестирование процессов агента и подтверждений ([`tests/test_agent_manager.py`](file:///d:/Projects/active/antigravity_bot/tests/test_agent_manager.py))
 - [x] Тестирование менеджера аккаунтов Google ([`tests/test_accounts.py`](file:///d:/Projects/active/antigravity_bot/tests/test_accounts.py))
+- [x] Тестирование валидации и выбора языка мастера установки ([`tests/test_setup_wizard.py`](file:///d:/Projects/active/antigravity_bot/tests/test_setup_wizard.py))
 - [x] Кроссплатформенный условный импорт для запуска тестов Flutter на Dart VM ([`web_helper.dart`](file:///d:/Projects/active/antigravity_bot/frontend_flutter/lib/services/web_helper.dart))
 - [x] Модульные тесты моделей Flutter ([`frontend_flutter/test/models_test.dart`](file:///d:/Projects/active/antigravity_bot/frontend_flutter/test/models_test.dart))
 - [x] Модульные тесты локализации Flutter ([`frontend_flutter/test/i18n_test.dart`](file:///d:/Projects/active/antigravity_bot/frontend_flutter/test/i18n_test.dart))
 - [x] Виджет-тесты всех экранов Flutter Mini App ([`frontend_flutter/test/screens_test.dart`](file:///d:/Projects/active/antigravity_bot/frontend_flutter/test/screens_test.dart))
 - [x] Smoke-тест запуска Flutter Mini App ([`frontend_flutter/test/widget_test.dart`](file:///d:/Projects/active/antigravity_bot/frontend_flutter/test/widget_test.dart))
+
 
 
